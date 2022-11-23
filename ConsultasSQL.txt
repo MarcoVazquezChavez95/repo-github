@@ -1,0 +1,7 @@
+------------------------CONSULTA PRODUCTO MAS VENDIDO--------------------------------------------------
+select venta.id_producto,producto.nombre,producto.referencia,producto.precio,producto.peso,producto.categoria,
+producto.fecha_de_creacion ,SUM(venta.cantidad) AS 'cantidad' FROM venta INNER JOIN producto 
+ON venta.id_producto=producto.id_producto GROUP BY id_producto ORDER BY SUM(venta.cantidad) DESC LIMIT 1;
+------------------------CONSULTA PRODUCTO CON MAS STOCK-------------------------------------------------
+select * from producto ORDER BY stock DESC LIMIT 1;
+-----------------------------------------------------------------------------------------------------------
